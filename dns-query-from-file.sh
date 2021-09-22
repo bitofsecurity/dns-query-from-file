@@ -27,5 +27,6 @@ fi
 # add delay - done
 # add some formatting + color - done
 # add other requests NS, MX etc.. 
+# I believe I got the original script from here: https://www.bggofurther.com/2017/05/dns-queries-from-a-filelist-to-csv/
 # to get top 100 domains: wget -q http://s3.amazonaws.com/alexa-static/top-1m.csv.zip;unzip top-1m.csv.zip; awk -F ',' '{print $2}' top-1m.csv|head -1000 > top-1000.txt; rm top-1m.csv*
 
