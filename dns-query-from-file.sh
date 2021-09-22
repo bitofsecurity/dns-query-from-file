@@ -1,8 +1,10 @@
 !/bin/bash
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 if [ "$1" == "" ]
 then
   # Display help if wrong usage
-  echo "Usage: /bin/bash resolverDNS.sh /path/to/file"
+  echo "Usage: bash dns-query-from-file.sh"
   exit 35
 else 
   # Loop over dns and resolve
@@ -13,12 +15,17 @@ else
       dns=`dig +noall +answer -x $line +short|tr 'n' ' '`
     # Resolve A record
     else
-      dns=`dig a $line +short|tr 'n' ' '`
+      dns=`dig A $line +short|tr 'n' ' '`
+#      dns=`dig MX $line +short|tr 'n' ' '`
     fi
-    echo -e "$linetis resolving intot${dns}"
+#    echo -e "$line $linetis resolving into:\n${dns}"
+    echo -e "\n${RED}$line${NC} resolving into:\n${dns}"
+    sleep 2
   done < "$1"
 fi
 # todo
-# add delay
+# add delay - done
+# add some formatting + color - done
 # add other requests NS, MX etc.. 
+# to get top 100 domains: wget -q http://s3.amazonaws.com/alexa-static/top-1m.csv.zip;unzip top-1m.csv.zip; awk -F ',' '{print $2}' top-1m.csv|head -1000 > top-1000.txt; rm top-1m.csv*
 
