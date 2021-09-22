@@ -1,6 +1,4 @@
 !/bin/bash
-# Script file - resolverDNS.sh
-# Checking existence of arg
 if [ "$1" == "" ]
 then
   # Display help if wrong usage
@@ -20,3 +18,7 @@ else
     echo -e "$linetis resolving intot${dns}"
   done < "$1"
 fi
+# todo
+# add delay
+# add other requests NS, MX etc.. 
+
