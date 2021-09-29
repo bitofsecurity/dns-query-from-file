@@ -1,6 +1,7 @@
-!/bin/bash
+#!/bin/bash
 RED='\033[0;31m'
-NC='\033[0m' # No Color
+NC='\033[0m' 
+# No Color
 if [ "$1" == "" ]
 then
   # Display help if wrong usage
@@ -20,7 +21,7 @@ else
     fi
 #    echo -e "$line $linetis resolving into:\n${dns}"
     echo -e "\n${RED}$line${NC} resolving into:\n${dns}"
-    sleep 2
+    sleep 1
   done < "$1"
 fi
 # todo
