@@ -5,7 +5,7 @@ NC='\033[0m'
 if [ "$1" == "" ]
 then
   # Display help if wrong usage
-  echo "Usage: bash dns-query-from-file.sh"
+  echo "Usage: bash dns-query-from-file.sh inputfilename"
   exit 35
 else 
   # Loop over dns and resolve
